@@ -58,11 +58,11 @@ hexo.extend.helper.register('next_pre', function() {
   const { enable, host } = this.theme.font;
   const { internal, plugins, custom_cdn_url } = this.theme.vendors;
   const links = {
-    local   : parse(this.theme.js || '').hostname,
+    local   : this.theme.js && parse(this.theme.js).hostname ? parse(this.theme.js).protocol + '//' + parse(this.theme.js).hostname : '',
     jsdelivr: 'https://cdn.jsdelivr.net',
     unpkg   : 'https://unpkg.com',
     cdnjs   : 'https://cdnjs.cloudflare.com',
-    custom  : parse(custom_cdn_url || '').hostname
+    custom  : custom_cdn_url && parse(custom_cdn_url).hostname ? parse(custom_cdn_url).protocol + '//' + parse(custom_cdn_url).hostname : ''
   };
   const h = enable ? host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];
@@ -90,6 +90,10 @@ hexo.extend.helper.register('post_edit', function(src) {
     class: 'post-edit-link',
     title: this.__('post.edit')
   });
+});
+
+hexo.extend.helper.register('post_count', function(year) {
+  return this.site.posts.filter(post => this.date(post.date, 'YYYY') === year).count();
 });
 
 hexo.extend.helper.register('gitalk_md5', function(path) {
