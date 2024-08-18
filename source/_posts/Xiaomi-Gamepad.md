@@ -7,7 +7,8 @@ tags:
 ## 安装
  1. （必要）安装驱动程序[ViGEm Bus](https://github.com/nefarius/ViGEmBus)
  2. （可选）安装输入设备防火墙[HidHide](https://github.com/nefarius/HidHide)
-Mi-ViGEm不会用Xbox手柄替换小米手柄，只是并行创建一个虚拟的Xbox手柄。某些游戏会从真实的小米手柄和虚拟的Xbox手柄同时读取输入，HidHide可以处理这个问题
+
+ > Mi-ViGEm不会用Xbox手柄替换小米手柄，只是并行创建一个虚拟的Xbox手柄。某些游戏会从真实的小米手柄和虚拟的Xbox手柄同时读取输入，HidHide可以处理这个问题
  3. 安装应用程序[Mi-ViGEm](https://github.com/grayver/mi-vigem)
  4. 重启电脑
 ## 使用
@@ -16,7 +17,7 @@ Mi-ViGEm不会用Xbox手柄替换小米手柄，只是并行创建一个虚拟�
  3. 运行支持Xbox手柄的游戏
  4. Enjoy it!
 ## 功能
- - [x] 模拟Xbox无线控制器
- - [x] 设备连接断开通知
- - [x] 显示电池电量
- - [x] 支持振动
+ * 模拟Xbox无线控制器
+ * 设备连接断开通知
+ * 显示电池电量
+ * 支持振动
